@@ -43,8 +43,9 @@ icon, type, home page copy, guide pages.
 
 ## 5. README and AGENTS.md
 
-Replace the template wording in the README with what the app does and
-what it replaces. Keep the install table.
+Replace the template wording in the README with what the app does.
+When it is an alternative to an existing app, name that app too. Keep
+the install table.
 
 In `AGENTS.md`, rewrite the `## This app` section after the
 `<!-- END SHARED GUIDELINES -->` marker: what the app is, and anything
