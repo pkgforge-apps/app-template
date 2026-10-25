@@ -21,6 +21,20 @@ Add it to your application menu with:
 ./app-template-x86_64-linux.onelf --onelf-integrate
 ```
 
+<!-- AppImage: keep this part only when Cargo.toml sets appimage = true
+under [package.metadata.pkgforge], and set appimage in .vitepress/app.ts
+to match. -->
+The `.AppImage` file is the same app as an
+[Anylinux AppImage](https://github.com/pkgforge-dev/Anylinux-AppImages),
+for AppImage managers such as AM or Gear Lever. It needs no FUSE and
+updates itself:
+
+```sh
+chmod +x app-template-x86_64-linux.AppImage
+./app-template-x86_64-linux.AppImage
+```
+<!-- /AppImage -->
+
 The `.tar.xz` archive holds the plain binary with its desktop entry and
 icons under `share/`. It uses the display libraries your system already
 has.

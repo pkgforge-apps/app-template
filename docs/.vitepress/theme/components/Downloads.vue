@@ -26,6 +26,12 @@ const platforms: Platform[] = [
     assets: [
       { label: 'x86_64', file: `${latest}-x86_64-linux.onelf`, note: 'portable, one file' },
       { label: 'aarch64', file: `${latest}-aarch64-linux.onelf`, note: 'portable, one file' },
+      ...(app.appimage
+        ? [
+            { label: 'x86_64', file: `${latest}-x86_64-linux.AppImage`, note: 'AppImage' },
+            { label: 'aarch64', file: `${latest}-aarch64-linux.AppImage`, note: 'AppImage' },
+          ]
+        : []),
       { label: 'x86_64', file: `${latest}-x86_64-linux.tar.xz`, note: 'archive' },
       { label: 'aarch64', file: `${latest}-aarch64-linux.tar.xz`, note: 'archive' },
     ],

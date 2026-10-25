@@ -47,6 +47,13 @@ Replace the template wording in the README with what the app does.
 When it is an alternative to an existing app, name that app too. Keep
 the install table.
 
+Ask whether the app should ship an AppImage too; the default is no.
+With no, delete the AppImage row of the README's install table and the
+parts of `README.md` and `docs/guide/installation.md` between
+`<!-- AppImage` and `<!-- /AppImage -->`. With yes, set `appimage = true`
+in `Cargo.toml` and `appimage: true` in `docs/.vitepress/app.ts`; the
+`anylinux-appimage` skill covers the rest.
+
 In `AGENTS.md`, rewrite the `## This app` section after the
 `<!-- END SHARED GUIDELINES -->` marker: what the app is, and anything
 about it the shared guidelines do not cover. Never edit the marked
