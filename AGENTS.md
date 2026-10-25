@@ -173,6 +173,7 @@ the pipeline. In short:
 | Platform | Asset |
 |----------|-------|
 | Linux, portable | `<app>-<arch>-linux.onelf` |
+| Linux, AppImage, opt-in | `<app>-<arch>-linux.AppImage` and its `.zsync` |
 | Linux | `<app>-<arch>-linux.tar.xz` |
 | macOS | `<app>-<arch>-macos.tar.xz` with an `.app` bundle |
 | Windows | `<app>-x86_64-windows.zip` |
@@ -193,6 +194,13 @@ alter what the bundle loads: `onelf.toml`, a dependency that links or
 opens a system library, an onelf upgrade, or a feature that reaches a
 new part of the system such as audio, file dialogs or notifications.
 The `onelf` skill covers inspecting and debugging a bundle.
+
+An app may also ship an Anylinux AppImage, for users and managers that
+expect that format, by setting `appimage = true` under
+`[package.metadata.pkgforge]` in `Cargo.toml`. It is a second format,
+not a replacement for the onelf bundle. The release pipeline builds it
+with `scripts/package-appimage.sh`; the `anylinux-appimage` skill
+covers it.
 
 Apps are not published to crates.io by default. When one should be,
 publish it through crates.io trusted publishing, never with a token
@@ -251,6 +259,7 @@ Procedures live in `.agents/skills/`. Claude Code only looks in
 `scripts/sync-guidelines.sh` creates. These are shared by every app:
 
 - `add-dependency` vets and adds a crate, or decides to inline it.
+- `anylinux-appimage` packages the app as an Anylinux AppImage.
 - `app-icon` designs the icon and regenerates every raster.
 - `app-docs` personalizes the docs site.
 - `release` explains and troubleshoots the release pipeline, including

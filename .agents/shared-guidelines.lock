@@ -1,6 +1,7 @@
 # Written by scripts/sync-guidelines.sh. Do not edit.
-source pkgforge-apps/.github@1aac502af910e347196a7b6ee5c5309ca9b31c7f
+source pkgforge-apps/.github@ecfeba163ab26755d06c0bf22646baec50758cf4
 skill add-dependency
+skill anylinux-appimage
 skill app-docs
 skill app-icon
 skill onelf
@@ -15,6 +16,7 @@ file .github/workflows/sync-guidelines.yml
 file scripts/check-ascii.sh
 file scripts/check.sh
 file scripts/icons.sh
+file scripts/package-appimage.sh
 file scripts/package-onelf.sh
 file scripts/package.sh
 file scripts/sync-guidelines.sh
