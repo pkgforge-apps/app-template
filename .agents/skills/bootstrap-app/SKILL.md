@@ -82,8 +82,9 @@ run them only after they confirm.
 ```sh
 repo=pkgforge-apps/<name>
 
-# release-plz and the guidelines sync open their PRs with GITHUB_TOKEN,
-# which needs this switch.
+# release-plz opens its PRs with GITHUB_TOKEN, which needs this switch.
+# The guidelines sync opens its PRs as pkgforge-apps-bot, which is
+# installed on every repository of the organization.
 gh api -X PUT "repos/$repo/actions/permissions/workflow" \
   -f default_workflow_permissions=read \
   -F can_approve_pull_request_reviews=true
