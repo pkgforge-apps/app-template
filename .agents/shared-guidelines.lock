@@ -1,5 +1,5 @@
 # Written by scripts/sync-guidelines.sh. Do not edit.
-source pkgforge-apps/.github@5d5e6ea1bf3effe18cf702837e4f492954531d9e
+source pkgforge-apps/.github@450f7121d26090ebb61fe52f9689b206375ef3b6
 skill add-dependency
 skill anylinux-appimage
 skill app-docs
@@ -12,7 +12,6 @@ file .github/workflows/ci.yml
 file .github/workflows/docs.yml
 file .github/workflows/release-plz.yml
 file .github/workflows/release.yml
-file .github/workflows/sync-guidelines.yml
 file scripts/check-ascii.sh
 file scripts/check.sh
 file scripts/icons.sh
