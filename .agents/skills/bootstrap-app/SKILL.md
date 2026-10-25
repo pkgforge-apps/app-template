@@ -89,6 +89,13 @@ gh api -X PUT "repos/$repo/actions/permissions/workflow" \
   -f default_workflow_permissions=read \
   -F can_approve_pull_request_reviews=true
 
+# One conventional commit per pull request, titled as the PR was
+# reviewed, which is what release-plz reads.
+gh api -X PATCH "repos/$repo" \
+  -F allow_squash_merge=true -F allow_merge_commit=false -F allow_rebase_merge=false \
+  -f squash_merge_commit_title=PR_TITLE -f squash_merge_commit_message=BLANK \
+  -F delete_branch_on_merge=true
+
 # Pages deploys from the docs workflow.
 gh api -X POST "repos/$repo/pages" -f build_type=workflow
 
