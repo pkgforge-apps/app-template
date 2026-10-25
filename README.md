@@ -38,7 +38,8 @@ Run it once with `--onelf-integrate` to add it to your application menu.
 Cargo.toml sets appimage = true under [package.metadata.pkgforge]. -->
 The `.AppImage` file is the same app as an
 [Anylinux AppImage](https://github.com/pkgforge-dev/Anylinux-AppImages),
-for AppImage managers such as AM or Gear Lever. It runs the same way and
+for AppImage managers such as [AM](https://github.com/ivan-hc/AM) or
+[soar](https://github.com/pkgforge/soar). It runs the same way and
 updates itself:
 
 ```sh

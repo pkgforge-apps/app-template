@@ -26,7 +26,8 @@ under [package.metadata.pkgforge], and set appimage in .vitepress/app.ts
 to match. -->
 The `.AppImage` file is the same app as an
 [Anylinux AppImage](https://github.com/pkgforge-dev/Anylinux-AppImages),
-for AppImage managers such as AM or Gear Lever. It needs no FUSE and
+for AppImage managers such as [AM](https://github.com/ivan-hc/AM) or
+[soar](https://github.com/pkgforge/soar). It needs no FUSE and
 updates itself:
 
 ```sh
