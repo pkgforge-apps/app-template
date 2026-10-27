@@ -19,6 +19,6 @@ permissions: {}
 
 jobs:
   ci:
-    uses: pkgforge-apps/.github/.github/workflows/app-ci.yml@45d9f1b5df9c96440708930789e18b4319ee6854
+    uses: pkgforge-apps/.github/.github/workflows/app-ci.yml@b390a3c1ac5d95e21b332955dd981f8d91359d02
     permissions:
       contents: read

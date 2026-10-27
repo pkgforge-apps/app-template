@@ -1,5 +1,5 @@
 # Written by scripts/sync-guidelines.sh. Do not edit.
-source pkgforge-apps/.github@45d9f1b5df9c96440708930789e18b4319ee6854
+source pkgforge-apps/.github@b390a3c1ac5d95e21b332955dd981f8d91359d02
 skill add-dependency
 skill anylinux-appimage
 skill app-docs
