@@ -21,8 +21,8 @@ Download the file for your platform from the
 | Linux, portable | `app-template-<arch>-linux.onelf` |
 | Linux, AppImage | `app-template-<arch>-linux.AppImage` |
 | Linux | `app-template-<arch>-linux.tar.xz` |
-| macOS | `app-template-<arch>-macos.tar.xz` |
-| Windows | `app-template-x86_64-windows.zip` |
+| macOS | `app-template-<arch>-macos.dmg` |
+| Windows | `app-template-x86_64-windows.exe` |
 
 The `.onelf` file is a single executable that carries its own libraries.
 Make it executable and run it:

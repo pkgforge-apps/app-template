@@ -42,12 +42,14 @@ has.
 
 ## macOS
 
-Extract the archive and move `App Template.app` to `Applications`. The app
+Open the disk image and drag **App Template** to **Applications**. The app
 is not notarized, so the first launch needs a right click and **Open**.
 
 ## Windows
 
-Extract the zip and run `app-template.exe`.
+Run `app-template-x86_64-windows.exe`. It needs no installer and nothing
+else installed. Windows may warn that it is from an unknown publisher,
+since it is not signed: choose **More info**, then **Run anyway**.
 
 ## From source
 

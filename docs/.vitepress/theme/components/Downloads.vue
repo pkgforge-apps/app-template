@@ -40,14 +40,14 @@ const platforms: Platform[] = [
     os: 'macos',
     label: 'macOS',
     assets: [
-      { label: 'Apple silicon', file: `${latest}-aarch64-macos.tar.xz` },
-      { label: 'Intel', file: `${latest}-x86_64-macos.tar.xz` },
+      { label: 'Apple silicon', file: `${latest}-aarch64-macos.dmg` },
+      { label: 'Intel', file: `${latest}-x86_64-macos.dmg` },
     ],
   },
   {
     os: 'windows',
     label: 'Windows',
-    assets: [{ label: 'x86_64', file: `${latest}-x86_64-windows.zip` }],
+    assets: [{ label: 'x86_64', file: `${latest}-x86_64-windows.exe` }],
   },
 ]
 
