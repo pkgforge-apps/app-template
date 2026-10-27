@@ -13,7 +13,7 @@ exclude = ["/docs", "/scripts", "/.github", "/.agents", "/.claude"]
 # Read by the shared release workflow. `appimage = true` ships an Anylinux
 # AppImage beside the onelf bundle; see the anylinux-appimage skill.
 [package.metadata.pkgforge]
-appimage = false
+appimage = true
 
 [dependencies]
 eframe = { version = "0.37.0", default-features = false, features = ["accesskit", "clipboard", "default_fonts", "glow", "links", "wayland", "x11"] }
