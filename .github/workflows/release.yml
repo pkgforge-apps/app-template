@@ -25,7 +25,7 @@ permissions: {}
 
 jobs:
   release:
-    uses: pkgforge-apps/.github/.github/workflows/app-release.yml@b390a3c1ac5d95e21b332955dd981f8d91359d02
+    uses: pkgforge-apps/.github/.github/workflows/app-release.yml@282bd4605d2058e0633cf1fadfb87943610cb3e8
     with:
       tag: ${{ inputs.tag }}
       onelf-version: ${{ inputs.onelf-version }}
