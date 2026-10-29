@@ -31,8 +31,8 @@ for AppImage managers such as [AM](https://github.com/ivan-hc/AM) or
 updates itself:
 
 ```sh
-chmod +x app-template-x86_64-linux.AppImage
-./app-template-x86_64-linux.AppImage
+chmod +x app-template-anylinux-x86_64.AppImage
+./app-template-anylinux-x86_64.AppImage
 ```
 <!-- /AppImage -->
 

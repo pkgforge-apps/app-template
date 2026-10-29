@@ -19,7 +19,7 @@ Download the file for your platform from the
 | Platform | File |
 |----------|------|
 | Linux, portable | `app-template-<arch>-linux.onelf` |
-| Linux, AppImage | `app-template-<arch>-linux.AppImage` |
+| Linux, AppImage | `app-template-anylinux-<arch>.AppImage` |
 | Linux | `app-template-<arch>-linux.tar.xz` |
 | macOS | `app-template-<arch>-macos.dmg` |
 | Windows | `app-template-x86_64-windows.exe` |
@@ -43,8 +43,8 @@ for AppImage managers such as [AM](https://github.com/ivan-hc/AM) or
 updates itself:
 
 ```sh
-chmod +x app-template-x86_64-linux.AppImage
-./app-template-x86_64-linux.AppImage
+chmod +x app-template-anylinux-x86_64.AppImage
+./app-template-anylinux-x86_64.AppImage
 ```
 <!-- /AppImage -->
 
