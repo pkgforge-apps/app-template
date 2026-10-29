@@ -49,6 +49,13 @@ Pick one per app at the start; do not mix them.
   cache directories.
 - CI tests on all three platforms. A change that only compiles on yours
   is not done.
+- An app that links a system library names its Debian packages, one per
+  line, in `.github/apt-packages.txt`, and the jobs that build on Ubuntu
+  install them first. The jobs that build in an Arch container read the
+  same list in `.github/pacman-packages.txt`, with Arch's package names.
+  Both files take comments. Keep them to what the build needs: the
+  release bundles carry their own libraries, so this is for compiling,
+  not for running.
 
 ## Workflow
 
@@ -177,7 +184,7 @@ the pipeline. In short:
 | Platform | Asset |
 |----------|-------|
 | Linux, portable | `<app>-<arch>-linux.onelf` |
-| Linux, AppImage, opt-in | `<app>-<arch>-linux.AppImage` and its `.zsync` |
+| Linux, AppImage, opt-in | `<app>-anylinux-<arch>.AppImage` and its `.zsync` |
 | Linux | `<app>-<arch>-linux.tar.xz` |
 | macOS | `<app>-<arch>-macos.dmg` with an `.app` bundle |
 | Windows | `<app>-x86_64-windows.exe` |
@@ -196,6 +203,11 @@ is the Mesa [onelf-pkgs/mesa](https://github.com/onelf-pkgs/mesa) builds
 without LLVM, which adds about 8 MB; do not drop it to save space. A smudge
 app drawing with its CPU renderer needs no GL, so it turns `gl` and
 `dri` off in `onelf.toml`; confirm with the `test-linux-bundle` skill.
+
+The onelf bundle updates itself with `--onelf-update`, downloading only
+what changed since the copy it replaces. Once the app has its update key
+it accepts only releases signed with it; the `release` skill covers how
+the key is made and used.
 
 Run the `test-linux-bundle` skill before merging any change that can
 alter what the bundle loads: `onelf.toml`, a dependency that links or
@@ -225,10 +237,10 @@ stored in repository secrets.
 
 ## Icons
 
-`assets/icon.svg` is the single source for every icon. Regenerate the
-rasters, the Windows `.ico` and the docs favicons with
-`scripts/icons.sh` after changing it. The `app-icon` skill covers the
-design rules.
+`assets/icon.svg` is the single source for every icon, or
+`assets/icon.png` when the icon is pixel art. Regenerate the rasters, the
+Windows `.ico` and the docs favicons with `scripts/icons.sh` after
+changing it. The `app-icon` skill covers the design rules.
 
 ## Layout
 
@@ -238,7 +250,7 @@ design rules.
 |   |-- main.rs          entry point, window options
 |   `-- app.rs           application state and root UI
 |-- assets/
-|   |-- icon.svg         icon source
+|   |-- icon.svg         icon source, or icon.png for pixel art
 |   |-- icon.ico         Windows icon, generated
 |   `-- icons/           PNG sizes, generated
 |-- packaging/
