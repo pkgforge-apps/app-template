@@ -104,6 +104,16 @@ gh repo edit "$repo" \
   --homepage "https://pkgforge-apps.github.io/<name>/"
 
 gh label create release --repo "$repo" --color 5b4cf0 --force
+
+# The release environment, usable by main alone, holds the key that signs
+# the onelf bundle's self-updates. pkgforge-apps-bot generates the key and
+# opens a pull request with its public half; it never creates this itself.
+gh api -X PUT "repos/$repo/environments/release" --input - <<'EOF'
+{"deployment_branch_policy": {"protected_branches": false, "custom_branch_policies": true}}
+EOF
+gh api -X POST "repos/$repo/environments/release/deployment-branch-policies" \
+  -f name=main -f type=branch
+gh workflow run provision-apps.yml -R pkgforge-apps/.github
 ```
 
 If the first call fails with a 409, the organization blocks Actions from

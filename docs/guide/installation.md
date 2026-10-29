@@ -21,6 +21,12 @@ Add it to your application menu with:
 ./app-template-x86_64-linux.onelf --onelf-integrate
 ```
 
+Update it in place, downloading only what changed since your copy:
+
+```sh
+./app-template-x86_64-linux.onelf --onelf-update
+```
+
 <!-- AppImage: keep this part only when Cargo.toml sets appimage = true
 under [package.metadata.pkgforge], and set appimage in .vitepress/app.ts
 to match. -->

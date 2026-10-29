@@ -32,7 +32,9 @@ chmod +x app-template-x86_64-linux.onelf
 ./app-template-x86_64-linux.onelf
 ```
 
-Run it once with `--onelf-integrate` to add it to your application menu.
+Run it once with `--onelf-integrate` to add it to your application menu,
+and update it in place with `--onelf-update`, which downloads only what
+changed.
 
 <!-- AppImage: keep this section, and the table row above, only when
 Cargo.toml sets appimage = true under [package.metadata.pkgforge]. -->
