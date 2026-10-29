@@ -8,7 +8,7 @@ git_release_enable = true
 # The organization makes published releases immutable, so the release
 # stays a draft until release.yml has attached every asset and publishes it.
 git_release_draft = true
-git_tag_name = "{{ version }}"
+git_tag_name = "v{{ version }}"
 pr_labels = ["release"]
 semver_check = false
 git_release_body = """
